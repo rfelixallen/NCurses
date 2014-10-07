@@ -8,6 +8,8 @@ int main(void)
 	initscr();
 	addstr(text1);
 	addstr(text2);
+	move(2,0);
+	addstr("With the Y chromosome changed to the X.");
 	refresh();
 	getch();
 
