@@ -9,7 +9,7 @@ int main(void)
 	addstr(text1);
 	addstr(text2);
 	move(2,0);
-	addstr("With the Y chromosome changed to the X.");
+	addstr("With the Y chromosome changed to the X."); //This places the cursor location.
 	refresh();
 	getch();
 
