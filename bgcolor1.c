@@ -1,6 +1,8 @@
 #include <ncurses.h>
 
-int main(void);
+// Demonstrates setting a background color.
+
+int main(void)
 {
 	initscr();
 

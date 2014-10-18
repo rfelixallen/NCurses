@@ -1,5 +1,7 @@
 #include <ncurses.h>
 
+// Demonstrates Bold and blinking text.
+
 int main(void)
 {
 	

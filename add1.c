@@ -1,5 +1,7 @@
 #include <ncurses.h>
 
+// Demonstrating printing characters to the screen with npams.
+
 int main(void)
 {
 	char text[] = "Greetings from NCurses!";

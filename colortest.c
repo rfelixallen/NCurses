@@ -1,6 +1,8 @@
 #include <ncurses.h>
 #include <stdlib.h>
 
+// Tests if terminal can display certain colors.
+
 void bomb(char *msg);
 
 int main(void)

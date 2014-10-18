@@ -1,5 +1,7 @@
 #include <ncurses.h>
 
+// Demonstrates the printw function.
+
 int main(void)
 {
 	int yoda = 874;

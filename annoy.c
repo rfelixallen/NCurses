@@ -1,6 +1,8 @@
 #include <ncurses.h>
 #define COUNT 5
 
+// A more elaborate demonstration of bold.
+
 int main(void)
 {
 	char text[COUNT][10] = { "Do", "you", "find", "this", "silly?" };

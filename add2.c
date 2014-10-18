@@ -1,5 +1,7 @@
 #include <ncurses.h>
 
+// Demonstration of addstr
+
 int main(void)
 {
 	char text1[] = "Oh give me a clone!\n";

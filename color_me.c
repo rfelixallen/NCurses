@@ -1,5 +1,7 @@
 #include <ncurses.h>
 
+// Demonstrates how init_color is used to define pink for color code 1.
+
 #define NEW_COLOR 1
 #define RED 1000
 #define GREEN 750

@@ -1,6 +1,8 @@
 #include <ncurses.h>
 #include <stdlib.h>
 
+// Demonstration of color switching in a program.
+
 void bomb(int r);
 
 int main(void)
