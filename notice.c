@@ -2,6 +2,7 @@
 
 // Demonstrates beeps and screen flashing.
 
+
 int main(void)
 {
 	initscr();
