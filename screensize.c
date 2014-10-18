@@ -1,5 +1,7 @@
 #include <ncurses.h>
 
+// Reports the current size of the terminal screen.
+
 int main(void)
 {
 	int x,y;
