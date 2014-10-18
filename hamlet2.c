@@ -1,6 +1,6 @@
 #include <ncurses.h>
 
-// Prints 3 lines. Staging for later demonstrations.
+// Prints 3 lines. Demonstrates inserting one more line.
 
 int main(void)
 {
