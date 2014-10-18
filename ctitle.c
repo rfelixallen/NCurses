@@ -1,7 +1,7 @@
 #include <ncurses.h>
 #include <string.h>
 
-// Demonstrates how to center text no matter screen size.
+// Demonstrates how to center text no matter screen size.+
 
 void center(int row, char *title);
 
