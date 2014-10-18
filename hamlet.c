@@ -1,5 +1,7 @@
 #include <ncurses.h>
 
+// Prints 3 lines. Staging for later demonstrations.
+
 int main(void)
 {
 	char Ham1[] = "To be, or not to be: that is the quesiton:\n";
