@@ -1,66 +1,51 @@
 #include <ncurses.h>
 
-#define MENUMAX 6
+void showhelp(void);
 
-void drawmenu(int item)
-{
-	int c;
-	char mainmenu[] = "Main Menu";
-	char menu[MENUMAX][21] = {	//6 items for MENUMAX
-
-		"Answer E-mail",
-		"Off to the Web",
-		"Word Processing",
-		"Financial Management",
-		"Maintenance",
-		"Shutdown",
-		};
-
-	clear();
-	addstr(mainmenu);
-	for(c=0;c<MENUMAX;c++)
-	{
-		if ( c==item )
-			attron(A_REVERSE);	//highlight selection
-		mvaddstr(3+(c*2),20,menu[c]);
-		attroff(A_REVERSE);		//remove highlight
-	}
-	mvaddstr(17,25,"Use arrow keys to move; Enter to select:");
-	refresh();
-}
+WINDOW *help;
 
 int main(void)
 {
-		int key,menuitem;
+	int ch;
 
-		menuitem = 0;
-
-		initscr();
-
-		drawmenu(menuitem);
-		keypad(stdscr,TRUE);
-		noecho();				//disable macro
-		do
-		{
-			key = getch();
-			switch(key)
-			{
-				case KEY_DOWN:
-					menuitem++;
-					if(menuitem > MENUMAX-1) menuitem = 0;
-					break;
-				case KEY_UP:
-					menuitem--;
-					if(menuitem < 0) menuitem = MENUMAX-1;
-					break;
-				default:
-					break;
-			}
-			drawmenu(menuitem);
-		} while(key != '\n');
-
-		echo();			//re-enable echo
-
+	initscr();
+	
+	/* build help menu */
+	if((help = newwin(0,0,0,0)) == NULL)
+	{
+		addstr("Unable to allocate window memory\n");
 		endwin();
-		return 0;
+		return(1);
+	}
+	mvwaddstr(help,6,32,"Help menu Screen");
+	mvwaddstr(help,9,28,"Press the ~ key to quit");
+	mvwaddstr(help,12,28,"Press ENTER to go back");
+
+	/* now starts the program loop */
+
+	addstr("Typer Program\n");
+	addstr("Type + for help:\n\n");
+	refresh();
+	noecho();
+	do
+	{
+		ch = getch();
+		refresh();
+		if(ch == '+')
+			showhelp();
+		else
+			addch(ch);
+	} while (ch != '~');
+
+	endwin();
+	return 0;
+}
+
+void showhelp(void)
+{
+	touchwin(help);
+	wrefresh(help);
+	getch(); 		/* wait for key press */
+	wrefresh(stdscr);
+	refresh();
 }
