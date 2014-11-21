@@ -46,6 +46,6 @@ void showhelp(void)
 	touchwin(help);
 	wrefresh(help);
 	getch(); 		/* wait for key press */
-	wrefresh(stdscr);
+	touchwin(stdscr);
 	refresh();
 }
