@@ -13,3 +13,10 @@ virtual screen = This screen only has the new input.
 Refresh() will update the screen. This actually runs two other functions: wnoutrefresh() and doupdate(). wnoutrefresh updates only changed portions to the virtual screen. doupdate makes current screen match virtual screen.
 
 intscr() launches NCurses and creates both stdscr and curscr
+
+I keep forgetting how to compile this code.
+  gcc <file> -lncurses
+
+this will produce two files: file.o and a.out
+to execute the file:
+   ./a.out 
